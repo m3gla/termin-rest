@@ -8,6 +8,6 @@ public class TestController {
 
 	@GetMapping("/testRest")
 	public String testTreminRest() {
-		return "test TerminRest - OK!";
+		return "Pozdav Golubić. Si pobedil na beli?";
 		}
 }
