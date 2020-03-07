@@ -40,8 +40,8 @@ public class BusinessSubjectDaoImpl implements BusinessSubjectDao{
 	@Override
 	public List<BusinessSubject> getAllBusinessSubjects() {
 		
-		String sql = "select id_bs name, identificator, iso_country, tstamp from business_subject";
-		List<BusinessSubject> businessSubjects = jdbcTemplate.queryForList(sql, BusinessSubject.class);
+		String sql = "select id_bs, name, identificator, iso_country, tstamp from business_subject";
+		List<BusinessSubject> businessSubjects = jdbcTemplate.query(sql, new BeanPropertyRowMapper<BusinessSubject>(BusinessSubject.class));
 		return businessSubjects;
 	}
 

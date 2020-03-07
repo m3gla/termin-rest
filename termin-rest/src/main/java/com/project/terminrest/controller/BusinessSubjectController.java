@@ -27,7 +27,7 @@ public class BusinessSubjectController {
 		return businessSubject;
 	}
 	
-	@GetMapping
+	@GetMapping("/getAllBusinessSubjects")
 	public List<BusinessSubject> getAllBusinessSubjects(){
 		
 		return businessSubjectService.getAllBusinessSubjects();
