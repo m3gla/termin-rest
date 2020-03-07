@@ -1,5 +1,7 @@
 package com.project.terminrest.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,11 @@ public class BusinessSubjectServiceImpl implements BusinessSubjectService{
 		Long idBS = businessSubjectDao.createBusinessSubject(pBusinessSubject);
 		pBusinessSubject.setIdBs(idBS);
 		return idBS;
+	}
+
+	@Override
+	public List<BusinessSubject> getAllBusinessSubjects() {
+		return businessSubjectDao.getAllBusinessSubjects();
 	}
 
 }

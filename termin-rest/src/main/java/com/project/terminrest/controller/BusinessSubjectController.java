@@ -1,6 +1,9 @@
 package com.project.terminrest.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +19,19 @@ public class BusinessSubjectController {
 	@Autowired
 	private BusinessSubjectService businessSubjectService;
 	
-	@PostMapping
-	BusinessSubject createBusinessSubject(@RequestBody BusinessSubject businessSubject) {
+	@PostMapping("/createBusinessSubject")
+	public BusinessSubject createBusinessSubject(@RequestBody BusinessSubject businessSubject) {
 		
 		businessSubjectService.createBusinessSubject(businessSubject);
 		
 		return businessSubject;
 	}
+	
+	@GetMapping
+	public List<BusinessSubject> getAllBusinessSubjects(){
+		
+		return businessSubjectService.getAllBusinessSubjects();
+	}
+	
 
 }
